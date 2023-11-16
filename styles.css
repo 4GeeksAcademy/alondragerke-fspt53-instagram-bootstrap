@@ -1,0 +1,13 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    background-color: transparent;
+    border: none; 
+}
+
+.navbar-brand b, .navbar-brand i {
+    font-size: 150%;
+}

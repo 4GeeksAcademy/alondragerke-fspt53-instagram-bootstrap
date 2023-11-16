@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">    
+    <title>Instagram</title>
+</head>
+<body>
+    <!-- encabezado -->    
+    <nav class="navbar d-flex justify-content-between navbar-light bg-light">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="#">
+                <i class="fa-brands fa-instagram"></i>
+                <b>Instagram</b>
+            </a>
+            <!-- botón modal create post -->
+            <div class="d-flex p-2">
+                <div class="mx-3">    
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createPost">
+                        Create a new post
+                    </button>
+                </div>
+                <div class="modal fade" id="createPost" tabindex="-1" aria-labelledby="createPostLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="createPostLabel">Create a new post</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="captionText" class="form-label"><b>Caption:</b></label>
+                                    <textarea class="form-control" id="captionText" rows="3">Add the caption of your post here</textarea>
+                                </div>
+                                <button type="button" class="btn btn-white btn-outline-light">
+                                    <i class="fa-solid fa-camera" style="color: #000000;"></i>
+                                </button>
+                                <button type="button" class="btn btn-white btn-outline-light">
+                                    <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+                                </button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- dropdown ajustes -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAjustes" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownAjustes">
+                        <li>
+                            <a class="dropdown-item" href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Accesibility</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Privacy and Data</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <!-- seleción entre modos de vista -->    
+        <ul class="nav nav-tabs justify-content-center mt-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed-pane" type="button" role="tab" aria-controls="feed-pane" aria-selected="true">
+                    <i class="fa-solid fa-table-cells" style="color: #000000;"></i>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts-pane" type="button" role="tab" aria-controls="posts-pane" aria-selected="false">
+                    <i class="fa-solid fa-square" style="color: #000000;"></i>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active controlImagenes" id="feed-pane" role="tabpanel" aria-labelledby="feed-tab" tabindex="0">
+                <!-- Primera página, cuadrícula -->    
+                <div class="container-fluid">
+                    <div class="row my-4"> 
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/bulldog.jpg" alt="bulldog con su familia"/>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/husky.jpg" alt="husky con su familia"/>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/labrador.jpg" alt="labrador con su familia"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row my-4"> 
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/breath.jpg" alt="mujer relajada en la naturaleza"/>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/hiking.jpg" alt="hombre descansando con su perro en la naturaleza"/>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/yoga.jpg" alt="mujer haciendo yoga en la naturaleza"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row my-4"> 
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/bosque.jpg" alt="bosque con luz calida"/>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/photography.jpg" alt="mujer con cámara en la naturaleza"/>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-3" src="./Imagenes/lago.jpg" alt="paisaje montañoso con lago"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="posts-pane" role="tabpanel" aria-labelledby="posts-tab" tabindex="0">
+                <!-- Segunda página, posts --> 
+                <!-- Primer post -->   
+                <div class="container-fluid py-5">
+                    <!-- encabezado -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 border border-1 py-3 px-2 d-flex justify-content-between rounded-top-3">
+                            <h5 class="p-0 mx-2 my-0">Explorando la felicidad</h5>
+                            <p class="p-0 mx-2 my-0">08/26</p>
+                        </div>
+                    </div>
+                    <!-- imagen -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 p-0 d-flex justify-content-center">
+                            <div id="carouselOne" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner border-y border-1">
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src="./Imagenes/bulldog.jpg" alt="familia feliz con perro">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="./Imagenes/husky.jpg" alt="familia feliz con perro">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="./Imagenes/labrador.jpg" alt="familia feliz con perro">
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselOne" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselOne" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden"></span>
+                                </button>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- contenido -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 py-3 border border-1 rounded-bottom-3">
+                            <p><b>2.504 Likes</b></p>
+                            <p class="p-0 m-0">Compartiendo momentos especiales con mi fiel compañero peludo. Desde paseos al atardecer hasta acogedores abrazos, cada día es una nueva aventura. 🐾</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Segundo post -->   
+                <div class="container-fluid py-5">
+                    <!-- encabezado -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 border border-1 py-3 px-2 d-flex justify-content-between rounded-top-3">
+                            <h5 class="p-0 mx-2 my-0">Respirando aire fresco en el bosque</h5>
+                            <p class="p-0 mx-2 my-0">04/09</p>
+                        </div>
+                    </div>
+                    <!-- imagen -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 p-0 d-flex justify-content-center">
+                            <div id="carouselTwo" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner border-y border-1">
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src="./Imagenes/breath.jpg" alt="paseo boscoso">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="./Imagenes/hiking.jpg" alt="paseo con perro">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="./Imagenes/yoga.jpg" alt="chica haciendo yoga">
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTwo" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselTwo" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contenido -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 py-3 border border-1 rounded-bottom-3">
+                            <p><b>26.985 Likes</b></p>
+                            <p class="p-0 m-0">Conectando con la naturaleza y recargando energías. 🌲</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tercer post -->   
+                <div class="container-fluid py-5">
+                    <!-- encabezado -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 border border-1 py-3 px-2 d-flex justify-content-between rounded-top-3">
+                            <h5 class="p-0 mx-2 my-0">Aventuras fotográficas en la naturaleza</h5>
+                            <p class="p-0 mx-2 my-0">06/10</p>
+                        </div>
+                    </div>
+                    <!-- imagen -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 p-0 d-flex justify-content-center">
+                            <div id="carouselThree" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner border-y border-1">
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src="./Imagenes/bosque.jpg" alt="chica de viaje">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="./Imagenes/photography.jpg" alt="bosque">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="./Imagenes/lago.jpg" alt="lago montañoso">
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselThree" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselThree" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden"></span>
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- contenido -->
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-5 py-3 border border-1 rounded-bottom-3">
+                            <p><b>10.805 Likes</b></p>
+                            <p class="p-0 m-0">Explorando lugares increíbles a través de mi lente. 📷</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>   
+</body>
+</html>
